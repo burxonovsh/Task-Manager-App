@@ -24,7 +24,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return redirect()->route('tasks.index');
+        return view('tasks.create');
     }
 
     /**
@@ -45,8 +45,8 @@ class TaskController extends Controller
      */
     public function show(string $id)
     {
-        $tasks = Task::findOrFail($id);
-        return view('tasks.show', compact('tasks'));
+        $task = Task::findOrFail($id);
+        return view('tasks.show', compact('task'));
     }
 
     /**
