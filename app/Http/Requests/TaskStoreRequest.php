@@ -24,6 +24,7 @@ class TaskStoreRequest extends FormRequest
         return [
             'title' => 'required|string',
             'status' => 'required|in:pending,in_progress,completed',
+            'description'=>'required',
             'due_date' => 'required|date',
         ];
     }

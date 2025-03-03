@@ -10,10 +10,10 @@ use App\Http\Requests\RegisterRequest;
 class AuthController extends Controller
 {
     public function registerForm(){
-        return view('register');
+        return view('Auth.Register');
     }
     public function loginForm(){
-        return view('login');
+        return view('Auth.Login');
     }
     public function register(RegisterRequest $request){
         $user = User::create([
@@ -27,7 +27,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('tasks.index');
+            return redirect()->route('tasks.index');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

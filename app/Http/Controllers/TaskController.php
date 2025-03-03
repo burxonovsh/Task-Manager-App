@@ -36,6 +36,7 @@ class TaskController extends Controller
         $tasks->title = $request->title;
         $tasks->status = $request->status;
         $tasks->due_date = $request->due_date;
+        $tasks->description = $request->description;
         $tasks->save();
         return redirect()->route('tasks.index');
     }

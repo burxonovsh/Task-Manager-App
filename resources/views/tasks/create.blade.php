@@ -20,6 +20,10 @@
             <input type="text" name="title" class="form-control" required>
         </div>
         <div class="mb-3">
+            <label for="description" class="form-label">Task Description</label>
+            <input type="text" name="description" class="form-control" required>
+        </div>
+        <div class="mb-3">
             <label for="status" class="form-label">Status</label>
             <select name="status" class="form-control">
                 <option value="pending">Pending</option>

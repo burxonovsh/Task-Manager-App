@@ -24,6 +24,7 @@ class TaskUpdateRequest extends FormRequest
         return [
             'title' => 'string',
             'status' => 'in:pending,in_progress,completed',
+            'description'=>'required',
             'due_date' => 'date',
         ];
     }
